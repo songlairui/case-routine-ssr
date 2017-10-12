@@ -41,6 +41,7 @@ app.get('*', (req, res) => {
   renderer.renderToString(context, (err, html) => {
     // console.info(err, html)
     if (err) {
+      console.error(err)
       if (err.code === 404) {
         res.status(404).end('未找到页面')
       } else {
